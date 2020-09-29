@@ -22,7 +22,8 @@ This repository also comes with a script to plot up the results after the invers
 The inversion as presented by Gallen and Fernández-Blanco (in review) involved >3 million iterations that took more than three weeks to run on a single Intel Xeon E5-2680 v3 core. To put this another way, this model takes a long time to run.
 Also note that, while MCMCs are great for their flexibility in application to various problems, they are difficult to generalize and thus require a significant amount of coding experience to be tailored to each application. This code is not sufficiently general to invert river profiles everywhere but is specifically designed for our application in Corinth. If you are interested in applying similar approaches but do not have the coding experience needed to revise this existing code, I am happy to collaborate and help you achieve your goals, so do not hesitate to email me.
 
-References:
+# References:
+
 Aster, Richard C., Brian Borchers, and Clifford H. Thurber. Parameter estimation and inverse problems. Elsevier, 2019.
 
 Gallen and Fernández-Blanco, in review, "A New Data-driven Bayesian Inversion of Fluvial Topography Clarifies the Tectonic History of the Corinth Rift and Reveals a Channel Steepness Threshold", JGR-Earth Surface.
