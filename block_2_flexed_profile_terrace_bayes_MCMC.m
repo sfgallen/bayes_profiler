@@ -25,8 +25,8 @@ dt = 25000;
 
 % define burnin and number of model interations (total interation is the
 % sum of both values)
-burn_in = 10;
-n_runs = 100;
+burn_in = 3e5;
+n_runs = 3e6;
 
 %% load prepped stream data and unpack
 % data was prepared using TopoToolbox (TTB). All data is topologically
