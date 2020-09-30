@@ -2,7 +2,7 @@
 Summary: Bayesian Markov chain Monte Carlo routine to invert river profiles and marine terrace data for rock uplift history and stream power parameters
 
 # Introduction
-This repository contains a number of MATLAB scripts and functions to run and plot the results of a Bayesian Markov chain Monte Carlo (MCMC) inversion of longitudinal river profiles and marine terrace-derived rock uplift rates developed by and presented in Gallen and Fernández-Blanco, 202X, "A New Data-driven Bayesian Inversion of Fluvial Topography Clarifies the Tectonic History of the Corinth Rift and Reveals a Channel Steepness Threshold", JGR-Earth Surface.
+This repository contains a number of MATLAB scripts and functions to run and plot the results of a Bayesian Markov chain Monte Carlo (MCMC) inversion (using the Metropolis-Hastings algorithm) of longitudinal river profiles and marine terrace-derived rock uplift rates developed by and presented in Gallen and Fernández-Blanco, 202X, "A New Data-driven Bayesian Inversion of Fluvial Topography Clarifies the Tectonic History of the Corinth Rift and Reveals a Channel Steepness Threshold", JGR-Earth Surface.
 
 The forward models assume a two-stage block-to-flexural (1D) uplift history, consistent with the evolution of the southern footwall of the Corinth Rift in Greece. The initial uplift is assumed to be spatially uniform and transitions to an uplift pattern consistent with flexure of broken elastic plate (footwall flexural uplift). The code uses the stream power incision model to evolve the river profiles through time. The stream power model states that:
 
@@ -19,7 +19,8 @@ The master script to run the inversion is block_2_flexed_profile_terrace_bayes_M
 This repository also comes with a script to plot up the results after the inversion called “plot_basic_results.m”). This script will plot the chain paths, likelihood and acceptance rate history, and the best-fit model results compared to the observed data.
 
 # Some practical notes
-The inversion as presented by Gallen and Fernández-Blanco (in review) involved >3 million iterations that took more than three weeks to run on a single Intel Xeon E5-2680 v3 core. To put this another way, this model takes a long time to run.
+The inversion as presented by Gallen and Fernández-Blanco (in review) involved >3 million iterations that took more than three weeks to run on a single Intel Xeon E5-2680 v3 core. To put this another way, this model takes a long time to run in large part because of the 7 unknown parameters and the use of the relatively inefficient Metropolis-Hastings (MH) algorithm. I used the MH algorithm because it is easier to code form scratch relative to other fancier MCMC algorithms.
+
 Also note that, while MCMCs are great for their flexibility in application to various problems, they are difficult to generalize and thus require a significant amount of coding experience to be tailored to each application. This code is not sufficiently general to invert river profiles everywhere but is specifically designed for our application in Corinth. If you are interested in applying similar approaches but do not have the coding experience needed to revise this existing code, I am happy to collaborate and help you achieve your goals, so do not hesitate to email me.
 
 # References:
