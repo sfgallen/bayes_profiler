@@ -2,7 +2,7 @@
 Summary: Bayesian Markov chain Monte Carlo routine to invert river profiles and marine terrace data for rock uplift history and stream power parameters
 
 # Introduction
-This repository contains a number of MATLAB scripts and functions to run and plot the results of a Bayesian Markov chain Monte Carlo (MCMC) inversion (using the Metropolis-Hastings algorithm) of longitudinal river profiles and marine terrace-derived rock uplift rates developed by and presented in Gallen and Fernández-Blanco, 202X, "A New Data-driven Bayesian Inversion of Fluvial Topography Clarifies the Tectonic History of the Corinth Rift and Reveals a Channel Steepness Threshold", JGR-Earth Surface.
+This repository contains a number of MATLAB scripts and functions to run and plot the results of a Bayesian Markov chain Monte Carlo (MCMC) inversion (using the Metropolis-Hastings algorithm) of longitudinal river profiles and marine terrace-derived rock uplift rates developed by and presented in Gallen and Fernández-Blanco, in review, "A New Data-driven Bayesian Inversion of Fluvial Topography Clarifies the Tectonic History of the Corinth Rift and Reveals a Channel Steepness Threshold", JGR-Earth Surface.
 
 The forward models assume a two-stage block-to-flexural (1D) uplift history, consistent with the evolution of the southern footwall of the Corinth Rift in Greece. The initial uplift is assumed to be spatially uniform and transitions to an uplift pattern consistent with flexure of broken elastic plate (footwall flexural uplift). The code uses the stream power incision model to evolve the river profiles through time. The stream power model states that:
 
