@@ -23,7 +23,7 @@ The inversion as presented by Gallen and Fernández-Blanco (in review) involved 
 
 Realizing how long the model takes to run, I set the number of total iterations in the main script to be 1.1e5 (1e4 for the burn in and 1e5 post-burn in). The script starts the model near the MAP solution, so even with the abbreviated number of iterations, you should still get a good idea of how the model work. However, please note that the model still sometimes picks a "bad" initial starting position and struggles to start searching the parameter space efficiently; therefore, it is good to run a couple of models to make sure things run smoothly.
 
-Also note that, while MCMCs are great for their flexibility in application to various problems, they are difficult to generalize and thus require a significant amount of coding experience to be tailored to each application. This code is not sufficiently general to invert river profiles everywhere but is specifically designed for our application in Corinth. If you are interested in applying similar approaches but do not have the coding experience needed to revise this existing code, I am happy to collaborate and help you achieve your goals, so do not hesitate to email me.
+Also note that, while MCMCs are great for their flexibility in application to various problems, they are difficult to generalize and thus require a significant amount of coding experience to be tailored for each application. This code is not sufficiently general to invert river profiles everywhere, rather is specifically designed for our application in Corinth. If you are interested in applying similar approaches but do not have the coding experience needed to revise the existing code, I am happy to collaborate and help you achieve your goals, so do not hesitate to email me.
 
 # References:
 
@@ -38,5 +38,3 @@ de Gelder, G., Fernández-Blanco, D., Melnick, D., Duclaux, G., Bell, R. E., Jar
 Schwanghart, W., & Scherler, D. (2014). Short Communication: TopoToolbox 2 – MATLAB-based software for topographic analysis and modeling in Earth surface sciences. Earth Surf. Dynam., 2(1), 1–7. https://doi.org/10.5194/esurf-2-1-2014
 
 Whipple, K. X., & Tucker, G. E. (1999). Dynamics of the stream-power river incision model: Implications for height limits of mountain ranges, landscape response timescales, and research needs. Journal of Geophysical Research: Solid Earth, 104(B8), 17661–17674. https://doi.org/10.1029/1999JB900120
-
-
