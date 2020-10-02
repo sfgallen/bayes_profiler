@@ -25,14 +25,10 @@ dt = 25000;
 
 % define burnin and number of model interations (total interation is the
 % sum of both values)
+% Note that in Gallen and Fernández-Blanco, 202X, we used a burn in of 3e5
+% and a
 burn_in = 1e4;
 n_runs = 1e5;
-% Note that in Gallen and Fernández-Blanco, 202X, we used a burn in of 3e5
-% and 3e6 post burnin interations, which takes ~21 - 28 days to run on a
-% normal computer. Below we set the burn in to 1e4 and the post-burn in
-% iterations to 1e5, which will take ~16-24 hours to run on a typical
-% computer. Because model initiates around the MAP solution, this should
-% give the user a good idea of how the MCMC operates
 
 %% load prepped stream data and unpack
 % data was prepared using TopoToolbox (TTB). All data is topologically
