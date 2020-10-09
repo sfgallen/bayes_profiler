@@ -2,7 +2,7 @@
 Summary: Bayesian Markov chain Monte Carlo routine to invert river profiles and marine terrace data for rock uplift history and stream power parameters
 
 # Introduction
-This repository contains a number of MATLAB scripts and functions to run and plot the results of a Bayesian Markov chain Monte Carlo (MCMC) inversion (using the Metropolis-Hastings algorithm) of longitudinal river profiles and marine terrace-derived rock uplift rates developed by and presented in Gallen and Fernández-Blanco, 202X, "A New Data-driven Bayesian Inversion of Fluvial Topography Clarifies the Tectonic History of the Corinth Rift and Reveals a Channel Steepness Threshold", JGR-Earth Surface.
+This repository contains a number of MATLAB scripts and functions to run and plot the results of a Bayesian Markov chain Monte Carlo (MCMC) inversion (using the Metropolis-Hastings algorithm) of longitudinal river profiles and marine terrace-derived rock uplift rates developed by and presented in Gallen and Fernández-Blanco, in review, "A New Data-driven Bayesian Inversion of Fluvial Topography Clarifies the Tectonic History of the Corinth Rift and Reveals a Channel Steepness Threshold", JGR-Earth Surface.
 
 The forward models assume a two-stage block-to-flexural (1D) uplift history, consistent with the evolution of the southern footwall of the Corinth Rift in Greece. The initial uplift is assumed to be spatially uniform and transitions to an uplift pattern consistent with flexure of broken elastic plate (footwall flexural uplift). The code uses the stream power incision model to evolve the river profiles through time. The stream power model states that:
 
@@ -19,11 +19,11 @@ The master script to run the inversion is block_2_flexed_profile_terrace_bayes_M
 This repository also comes with a script to plot up the results after the inversion called “plot_basic_results.m”). This script will plot the chain paths, likelihood and acceptance rate history, and the best-fit model results compared to the observed data.
 
 # Some practical notes
-The inversion as presented by Gallen and Fernández-Blanco (in review) involved >3 million iterations that took more than three weeks to run on a single Intel Xeon E5-2680 v3 core. To put this another way, this model takes a long time to run in large part because of the 7 unknown parameters and the use of the relatively inefficient Metropolis-Hastings (MH) algorithm. I used the MH algorithm because it is easier to code form scratch relative to other fancier MCMC algorithms.
+The inversion as presented by Gallen and Fernández-Blanco (in review) involved >3 million iterations that took more than three weeks to run on a single Intel Xeon E5-2680 v3 core. To put this another way, this model takes a long time to run in large part because of the 7 unknown parameters and the use of the relatively inefficient Metropolis-Hastings (MH) algorithm. I used the MH algorithm because it is easier to code from scratch relative to other fancier MCMC algorithms. 
 
-Sometimes that model picks a bad initial starting position and struggles to start searching the parameter space efficiently, so it is good to run a couple of models to make sure things run smoothly.
+Realizing how long the model takes to run, I set the number of total iterations in the main script to be 1.1e5 (1e4 for the burn in and 1e5 post-burn in). The script starts the model near the MAP solution, so even with the abbreviated number of iterations, the user can still get a good idea of how the model works. However, please note that the model still sometimes picks a "bad" initial starting position and struggles to start searching the parameter space efficiently with 1.1e5 iterations; therefore, it is good to run a couple of models to make sure things run smoothly.
 
-Also note that, while MCMCs are great for their flexibility in application to various problems, they are difficult to generalize and thus require a significant amount of coding experience to be tailored to each application. This code is not sufficiently general to invert river profiles everywhere but is specifically designed for our application in Corinth. If you are interested in applying similar approaches but do not have the coding experience needed to revise this existing code, I am happy to collaborate and help you achieve your goals, so do not hesitate to email me.
+Also note that, while MCMCs are great for their flexibility in application to various problems, they are difficult to generalize and thus require a significant amount of coding experience to be tailored for each application. This code is not sufficiently general to invert river profiles everywhere, rather is specifically designed for our application in Corinth. If you are interested in applying similar approaches but do not have the experience needed to revise the existing code, I am happy to collaborate and help you achieve your goals, so do not hesitate to email me.
 
 # References:
 
@@ -38,5 +38,3 @@ de Gelder, G., Fernández-Blanco, D., Melnick, D., Duclaux, G., Bell, R. E., Jar
 Schwanghart, W., & Scherler, D. (2014). Short Communication: TopoToolbox 2 – MATLAB-based software for topographic analysis and modeling in Earth surface sciences. Earth Surf. Dynam., 2(1), 1–7. https://doi.org/10.5194/esurf-2-1-2014
 
 Whipple, K. X., & Tucker, G. E. (1999). Dynamics of the stream-power river incision model: Implications for height limits of mountain ranges, landscape response timescales, and research needs. Journal of Geophysical Research: Solid Earth, 104(B8), 17661–17674. https://doi.org/10.1029/1999JB900120
-
-
