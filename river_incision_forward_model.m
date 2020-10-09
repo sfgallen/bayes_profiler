@@ -2,9 +2,9 @@ function [Z0] = river_incision_forward_model(S,S_DA,S_U,Ui,K,m,n,run_time,dt)
 
 % This function used the implicit finite difference scheme to solve the one
 % dimensional stream power model (E = K*A^m*S^n) on a TopoToolbox STREAMobj
-% using the implicit finite difference scheme of Braun and Willet (2013). 
+% using the  scheme of Braun and Willet (2013). 
 % Some of the codes are modified and simplified versions of the solvers 
-% available with the TTLEM (Campforts et al., 2013, E-Surf). 
+% available with the TTLEM (Campforts et al., 2017, E-Surf). 
 % 
 % Inputs:
 % (1) S - Matlab structure formated the same as a STREAMobj from TopoToolbox

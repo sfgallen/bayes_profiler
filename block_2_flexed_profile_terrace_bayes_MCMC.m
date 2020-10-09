@@ -2,7 +2,7 @@
 % Carlo (MCMC) inversion of river profiles and marine terrace-derived rock
 % uplift rates assuming a two-stage block-to-flexural (1D) uplift history
 % using the stream power incision model as presented in Gallen and
-% Fernández-Blanco, 202X, "A New Data-driven Bayesian Inversion of Fluvial 
+% Fernández-Blanco, in review, "A New Data-driven Bayesian Inversion of Fluvial 
 % Topography Clarifies the Tectonic History of the Corinth Rift and Reveals 
 % a Channel Steepness Threshold", JGR-Earth Surface
 %
@@ -27,9 +27,9 @@ dt = 25000;
 % sum of both values)
 burn_in = 1e4;
 n_runs = 1e5;
-% Note that in Gallen and Fernández-Blanco, 202X, we used a burn in of 3e5
+% Note that in Gallen and Fernández-Blanco, in review, we used a burn in of 3e5
 % and 3e6 post burnin interations, which takes ~21 - 28 days to run on a
-% normal computer. Below we set the burn in to 1e4 and the post-burn in
+% normal computer. Above we set the burn in to 1e4 and the post-burn in
 % iterations to 1e5, which will take ~16-24 hours to run on a typical
 % computer. Because model initiates around the MAP solution, this should
 % give the user a good idea of how the MCMC operates
@@ -117,7 +117,7 @@ rng shuffle
 % approximate MAP solution based on previous model iterations
 params(1,1) = 0.12e-3+0.1e-3*randn(1);      % Ui
 params(1,2) = 1.65e-3+0.1e-3*randn(1);      % Uf
-params(1,3) = -6.9+1e-1*randn(1);             % Kexp
+params(1,3) = -6.9+1e-1*randn(1);           % Kexp
 params(1,4) = 2.350e3+1e2*randn(1);         % Te
 params(1,5) = 6.00e5+1e4*randn(1);          % fault_init_time
 params(1,6) = 7+1e-1*randn(1);              % n
@@ -178,7 +178,7 @@ for i = 2:burn_in+n_runs
     % pick candidate parameters
     candidate = current+p_steps.*randn(1,7);
    
-    % cast paramters for model run
+    % set candidate parameters for model run
     Ui_t = candidate(1);
     Uf_t = candidate(2);
     
