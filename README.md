@@ -1,5 +1,9 @@
 # bayes_profiler
-Summary: Bayesian Markov chain Monte Carlo routine to invert river profiles and marine terrace data for rock uplift history and stream power parameters
+A Bayesian Markov chain Monte Carlo routine to invert river profiles and marine terrace data for rock uplift history and stream power parameters
+
+by Sean F. Gallen
+
+DOI: 10.5281/zenodo.4081849
 
 # Introduction
 This repository contains a number of MATLAB scripts and functions to run and plot the results of a Bayesian Markov chain Monte Carlo (MCMC) inversion (using the Metropolis-Hastings algorithm) of longitudinal river profiles and marine terrace-derived rock uplift rates developed by and presented in Gallen and Fernández-Blanco, in review, "A New Data-driven Bayesian Inversion of Fluvial Topography Clarifies the Tectonic History of the Corinth Rift and Reveals a Channel Steepness Threshold", JGR-Earth Surface.
