@@ -1,7 +1,9 @@
 # bayes_profiler
 A Bayesian Markov chain Monte Carlo routine to invert river profiles and marine terrace data for rock uplift history and stream power parameters
 
-by Sean F. Gallen
+Sean F. Gallen
+
+Department of Geosciences, Colorado State University
 
 DOI: 10.5281/zenodo.4081849
 
